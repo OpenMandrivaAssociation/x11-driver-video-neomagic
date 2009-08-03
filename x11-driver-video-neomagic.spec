@@ -1,5 +1,5 @@
 Name: x11-driver-video-neomagic
-Version: 1.2.3
+Version: 1.2.4
 Release: %mkrel 1
 Summary: X.org driver for NeoMagic Cards
 Group: System/X11
@@ -19,7 +19,7 @@ x11-driver-video-neomagic is the X.org driver for NeoMagic Cards.
 %setup -q -n xf86-video-neomagic-%{version}
 
 %build
-%configure
+%configure2_5x
 %make
 
 %install
