@@ -1,0 +1,12 @@
+--- xf86-video-neomagic-1.2.7/src/neo_driver.c~	2012-07-16 02:29:43.000000000 +0000
++++ xf86-video-neomagic-1.2.7/src/neo_driver.c	2013-03-24 13:43:18.901914898 +0000
+@@ -72,9 +72,6 @@
+ /* All drivers initialising the SW cursor need this */
+ #include "mipointer.h"
+ 
+-/* All drivers implementing backing store need this */
+-#include "mibstore.h"
+-
+ /* All drivers using the mi colormap manipulation need this */
+ #include "micmap.h"
+ 
