@@ -1,6 +1,6 @@
---- xf86-video-neomagic-1.2.7/src/neo_driver.c~	2012-07-16 02:29:43.000000000 +0000
-+++ xf86-video-neomagic-1.2.7/src/neo_driver.c	2013-03-24 13:43:18.901914898 +0000
-@@ -72,9 +72,6 @@
+--- xf86-video-neomagic-1.2.7/src/neo_driver.c.0000~	2012-07-16 04:29:43.000000000 +0200
++++ xf86-video-neomagic-1.2.7/src/neo_driver.c	2013-04-06 02:46:40.911893385 +0200
+@@ -72,9 +72,6 @@ CONNECTION WITH THE USE OR PERFORMANCE O
  /* All drivers initialising the SW cursor need this */
  #include "mipointer.h"
  
@@ -9,4 +9,12 @@
 -
  /* All drivers using the mi colormap manipulation need this */
  #include "micmap.h"
+ 
+@@ -1621,7 +1618,6 @@ NEOScreenInit(SCREEN_INIT_ARGS_DECL)
+                    "Acceleration %s Initialized\n",ret ? "" : "not");
+     } 
+ 
+-    miInitializeBackingStore(pScreen);
+     xf86SetBackingStore(pScreen);
+     xf86SetSilkenMouse(pScreen);
  
