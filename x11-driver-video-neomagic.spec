@@ -8,7 +8,7 @@ Group:		System/X11
 License:	MIT
 Url:		http://xorg.freedesktop.org
 Source0:	http://xorg.freedesktop.org/releases/individual/driver/xf86-video-neomagic-%{version}.tar.bz2
-
+Patch0:		U_neomagic-fix-build-against-master-X-server.patch
 BuildRequires:	pkgconfig(xorg-macros)
 BuildRequires:	pkgconfig(xorg-server)
 BuildRequires:	pkgconfig(xproto)
@@ -22,7 +22,7 @@ x11-driver-video-neomagic is the X.org driver for NeoMagic Cards.
 %apply_patches
 
 %build
-%configure2_5x
+%configure
 %make
 
 %install

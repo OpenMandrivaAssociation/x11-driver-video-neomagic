@@ -1,0 +1,43 @@
+From 6661bdd4551e4e63e983685464a277845aed3012 Mon Sep 17 00:00:00 2001
+From: Dave Airlie <airlied@gmail.com>
+Date: Sun, 21 Sep 2014 09:51:37 +1000
+Subject: [PATCH] neomagic: fix build against master X server.
+
+Signed-off-by: Dave Airlie <airlied@redhat.com>
+---
+ src/neo_driver.c | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/src/neo_driver.c b/src/neo_driver.c
+index 1b0da34..da01962 100644
+--- a/src/neo_driver.c
++++ b/src/neo_driver.c
+@@ -1994,10 +1994,12 @@ neoMapMem(ScrnInfoPtr pScrn)
+             }
+ #endif
+         } else
++#ifdef VIDMEM_MMIO
+             nPtr->NeoMMIOBase =
+                 xf86MapVidMem(pScrn->scrnIndex,
+                               VIDMEM_MMIO, nPtr->NeoMMIOAddr,
+                               0x200000L);
++#endif
+         if (nPtr->NeoMMIOBase == NULL)
+             return FALSE;
+     }
+@@ -2024,10 +2026,12 @@ neoMapMem(ScrnInfoPtr pScrn)
+     }
+ #endif
+     else
++#ifdef VIDMEM_FRAMEBUFFER
+         nPtr->NeoFbBase =
+             xf86MapVidMem(pScrn->scrnIndex, VIDMEM_FRAMEBUFFER,
+                           (unsigned long)nPtr->NeoLinearAddr,
+                           nPtr->NeoFbMapSize);
++#endif
+     if (nPtr->NeoFbBase == NULL)
+         return FALSE;
+     return TRUE;
+-- 
+1.8.4.5
+
