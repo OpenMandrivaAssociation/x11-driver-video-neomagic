@@ -2,8 +2,8 @@
 
 Summary:	X.org driver for NeoMagic Cards
 Name:		x11-driver-video-neomagic
-Version:	1.2.9
-Release:	5
+Version:	1.3.0
+Release:	1
 Group:		System/X11
 License:	MIT
 Url:		http://xorg.freedesktop.org
