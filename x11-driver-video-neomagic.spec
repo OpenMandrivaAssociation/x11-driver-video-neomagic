@@ -18,7 +18,7 @@ x11-driver-video-neomagic is the X.org driver for NeoMagic Cards.
 
 %prep
 %setup -qn xf86-video-neomagic-%{version}
-%apply_patches
+%autopatch -p1
 
 %build
 %configure
